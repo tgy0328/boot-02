@@ -25,6 +25,7 @@ public class HelloController {
 
         System.out.println("你好：" + username);
         System.out.println("hello git");
+        System.out.println("master test");
         return "你好：" + username;
     }
     @RequestMapping("/test")
