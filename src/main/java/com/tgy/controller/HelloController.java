@@ -24,6 +24,7 @@ public class HelloController {
     public String helloTest(@PathVariable("username") String username) {
 
         System.out.println("你好：" + username);
+        System.out.println("hello git");
         return "你好：" + username;
     }
     @RequestMapping("/test")

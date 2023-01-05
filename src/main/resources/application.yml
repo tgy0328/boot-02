@@ -1,10 +1,16 @@
-#spring:
-#  mvc:
-#    static-path-pattern: /res/**
+#当前项目+static-path-pattern+静态资源名=静态资源文件夹下找
+spring:
+  mvc:
+    static-path-pattern: /res/**
 
-#spring:
-#  web:
-#    resources:
-#      static-locations: [classpath:/haha/]
 
+#配置静态资源默认文件夹位置
+  web:
+    resources:
+      static-locations: [classpath:/haha/]
+
+#配置访问路径 localhost:8080/+ context-path
+#server:
+#  servlet:
+#    context-path: /boot
 
