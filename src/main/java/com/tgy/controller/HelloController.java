@@ -2,7 +2,11 @@ package com.tgy.controller;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author tgy
@@ -17,10 +21,19 @@ public class HelloController {
     }
 
     @RequestMapping("/hello/{username}")
-    public String helloTest(@PathVariable("username") String username){
+    public String helloTest(@PathVariable("username") String username) {
 
-        System.out.println("你好："+username);
-        return "你好："+username;
-
+        System.out.println("你好：" + username);
+        return "你好：" + username;
+    }
+    @RequestMapping("/test")
+    public Map<String,Object> testParam(@RequestParam("age") Integer age,
+                                        @RequestParam("name") String name,
+                                        @RequestParam  Map<String,String> pv){
+        Map<String,Object> map=new HashMap<>();
+        map.put("age",age);
+        map.put("name",name);
+        map.put("pv",pv);
+        return map;
     }
 }
